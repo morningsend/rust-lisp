@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "rlisp",
+  "rlisp-repl",
+  "rlisp-bin",
+]
