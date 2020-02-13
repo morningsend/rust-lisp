@@ -1,18 +1,31 @@
-mod ast {
+use super::scanner::TokenKind;
 
-  struct Atom {
+pub trait SExpression {
+    fn is_empty(&self) -> bool;
+}
 
-  }
+pub struct Empty {}
 
-  struct SExpression {
-    
-  }
+pub trait Atom: SExpression {}
 
-  struct StringAtom {
+pub struct AtomList {}
 
-  }
+impl SExpression for AtomList {
+    fn is_empty(&self) -> bool {
+        false
+    }
+}
 
-  struct NumberAtom {
+impl SExpression for Empty {
+    fn is_empty(&self) -> bool {
+        true
+    }
+}
 
-  }
+pub trait ExpressionVisitor {
+    fn visit(&self);
+}
+
+pub trait Walker {
+    fn walk(&self);
 }

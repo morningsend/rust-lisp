@@ -1,5 +1,5 @@
 use std::io;
-use std::io::{Write};
+use std::io::Write;
 use std::process;
 
 fn clean_input(s: &str) -> &str {
